@@ -2,27 +2,14 @@
 from flask import Flask, Blueprint, redirect, render_template,request,session, url_for,jsonify
 from flask_restx import Api, Namespace
 from flask_sqlalchemy import SQLAlchemy
-from swagger.api_models import *
 from swagger.extensions import *
-from swagger.models import *
-from swagger.resources import *
+from app_config import config,  environment
 
 app = Flask(__name__)
-
-# blueprint = Blueprint("api", __name__, url_prefix="/api/v1")
-
-# api = Api(
-#     blueprint,
-#     version="1.0",
-#     title="Mini REST API",
-#     description="A mini REST API",
-# )
-# ns = api.namespace("items", description="Item operations")
-# api.add_namespace(ns)
+app_config = config(environment)
 
 app.register_blueprint(api_bp)
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql+psycopg2://postgres-to-do:strong-password@localhost:5432/to-do"  
-api.add_namespace(ns)
+app.config["SQLALCHEMY_DATABASE_URI"] = app_config.SQLALCHEMY_DATABASE_URI 
 db.init_app(app)
 
 @app.route("/")

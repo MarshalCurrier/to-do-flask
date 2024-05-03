@@ -25,7 +25,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="signUpLabel">Modal title</h5>
+        <h5 class="modal-title" id="signUpLabel">Sign Up</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -67,6 +67,8 @@
   }
   
   function sign_up(){
+    const apiUrl = "http://localhost:5000/swagger/api/user"
+    user_username = document.getElementById('signup_username').value
     user_email = document.getElementById('signup_user_email').value
     user_password = document.getElementById('signup_user_password').value
     console.log(user_email)
@@ -76,6 +78,35 @@
     console.log(email_is_valid)
     password_is_valid = ValidatePassword(user_password)
     console.log(password_is_valid)
+
+    const data = {
+      username: user_username,
+      email: user_email,
+      password: user_password
+    }
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    };
+    fetch(apiUrl, requestOptions)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      console.log(response)
+      return response;
+    })
+    .then(data => {
+      outputElement.textContent = JSON.stringify(data, null, 2);
+    })
+    .catch(error => {
+      console.error
+  
+    ('Error:', error);
+  });
   }
 
 </script>

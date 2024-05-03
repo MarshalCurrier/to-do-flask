@@ -1,39 +1,11 @@
 from flask_restx import Resource, Namespace
-from .models import *
-from .api_models import *
+from .models import User
+from .api_models import user_post_model, user_model, user_signup_model, user_auth_model
 from .extensions import *
-from .models import *
+from .models import User
 import hashlib
 
 ns = Namespace("api")
-
-
-
-# @ns.route("hello")
-# class Hello(Resource):
-#     def get(self):
-#         return {"hello" : "rest"}
-    
-# @ns.route("/courses")
-# class CourseAPI(Resource):
-#     @ns.marshal_list_with(course_model)
-#     def get(self):
-#         return Course.query.all()
-    
-#     @ns.expect(course_post_model)
-#     @ns.marshal_with(course_model)
-#     def post(self):
-#         course = Course(name=ns.payload["name"])
-#         db.session.add(course)
-#         db.session.commit()
-#         return course, 201
-
-    
-# @ns.route("/students")
-# class StudentAPI(Resource):
-#     @ns.marshal_list_with(student_model)
-#     def get(self):
-#         return Student.query.all()
     
 @ns.route("/user")
 class UserListAPI(Resource):
@@ -42,8 +14,16 @@ class UserListAPI(Resource):
         return User.query.all()
     
     @ns.expect(user_signup_model)
+    @ns.marshal_with(user_signup_model)   
     def post(self):
-        user = User(username=ns.payload["username"])
+        user = User(
+            username=ns.payload["username"],
+            password=ns.payload["password"],
+            email=ns.payload["email"],
+            active = False
+            )
+        # print(user)
+        # print(type(user))
         db.session.add(user)
         db.session.commit()
         return user, 201
