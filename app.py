@@ -2,6 +2,7 @@
 from flask import Flask, Blueprint, redirect, render_template,request,session, url_for,jsonify
 from flask_restx import Api, Namespace
 from flask_sqlalchemy import SQLAlchemy
+from flask_session import Session
 from swagger.extensions import *
 from app_config import config,  environment
 
@@ -10,11 +11,13 @@ app_config = config(environment)
 
 app.register_blueprint(api_bp)
 app.config["SQLALCHEMY_DATABASE_URI"] = app_config.SQLALCHEMY_DATABASE_URI 
-db.init_app(app)
+app.config["SESSION_TYPE"] = "filesystem"
+db = SQLAlchemy(app)
+sess = Session(app)
 
 @app.route("/")
 def home():
-    page_title = "My Tasks"
+    page_title = "Home"
     return render_template("index.html",
                            page_title = page_title)
 
