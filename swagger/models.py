@@ -13,7 +13,7 @@ from .extensions import db
 #     course = db.relationship("Course", back_populates="students")
 
 class User(db.Model):
-    __table_args__ = {'schema': 'to-do'}
+    __table_args__ = {'schema': 'users'}
     user_id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(50), unique=True)
     password = db.Column(db.String(64))
