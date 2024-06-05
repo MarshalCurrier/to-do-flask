@@ -3,7 +3,7 @@ from .models import User
 from .api_models import user_post_model, user_model, user_signup_model, user_auth_model,user_login_model
 from .extensions import *
 from .models import User
-from  jwt.jwt_config import generate_token
+from  my_jwt.my_jwt_config import generate_token
 import hashlib
 
 ns = Namespace("api")

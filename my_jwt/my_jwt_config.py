@@ -1,4 +1,4 @@
-import jwt
+import my_jwt
 import datetime
 from functools import wraps
 from flask import request, jsonify
@@ -17,7 +17,7 @@ def jwt_token_required(func):
         if not token:
             return jsonify({'message': 'Token is missing!'}), 401
         try:
-            data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
+            data = my_jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
             current_user = data['sub']
         except:
             return jsonify({'message': 'Token is invalid!'}), 401
@@ -32,4 +32,4 @@ def generate_token(user_id, username):
         'sub': user_id,  # Subject (user ID)
         'username': username  # Additional claims (e.g., username)
     }
-    return jwt.encode(payload, app_secret_key, algorithm='HS256')
+    return my_jwt.encode(payload, app_secret_key, algorithm='HS256')

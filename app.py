@@ -4,7 +4,7 @@ from flask_restx import Api, Namespace
 from flask_sqlalchemy import SQLAlchemy
 from flask_session import Session
 from flask_jwt_extended import JWTManager
-import jwt
+import my_jwt
 import datetime
 from functools import wraps
 from swagger.extensions import *
@@ -23,7 +23,7 @@ app.config['SECRET_KEY'] = get_secret_key()
 db.init_app(app)
 # db = SQLAlchemy(app)
 sess = Session(app)
-jwt = JWTManager(app)
+my_jwt = JWTManager(app)
 
 def jwt_token_required(func):
     @wraps(func)
@@ -34,7 +34,7 @@ def jwt_token_required(func):
         if not token:
             return jsonify({'message': 'Token is missing!'}), 401
         try:
-            data = jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
+            data = my_jwt.decode(token, app.config['SECRET_KEY'], algorithms=['HS256'])
             current_user = data['sub']
         except:
             return jsonify({'message': 'Token is invalid!'}), 401
@@ -48,7 +48,7 @@ def generate_token(user_id, username):
         'sub': user_id,  # Subject (user ID)
         'username': username  # Additional claims (e.g., username)
     }
-    return jwt.encode(payload, app.config['SECRET_KEY'], algorithm='HS256')
+    return my_jwt.encode(payload, app.config['SECRET_KEY'], algorithm='HS256')
 
 @app.route('/protected', methods=['GET'])
 @jwt_token_required
