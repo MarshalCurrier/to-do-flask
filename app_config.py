@@ -1,5 +1,6 @@
 environment = 'development'
 brand_name = "Update app_config.py"
+secret_key = 'JustSomeJunkForNow'
 
 ## Dev DB Connection Info
 DEV_PG_USER = "productivitypals"
@@ -10,6 +11,9 @@ DEV_PG_DB = "productivitypals"
 
 def get_brand_name():
     return brand_name
+
+def get_secret_key():
+    return secret_key
 
 class config:
     SQLALCHEMY_DATABASE_URI = ""

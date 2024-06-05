@@ -24,3 +24,8 @@ user_signup_model = api.model("User",{
 user_post_model = api.model("UserPost",{
     "username" :fields.String,
 })
+
+user_login_model = api.model("UserLoginGet",{
+    "username" :fields.String,
+    "password" :fields.String,
+})

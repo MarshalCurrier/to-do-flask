@@ -9,7 +9,7 @@ import datetime
 from functools import wraps
 from swagger.extensions import *
 from app_config import config,  environment
-from app_config import get_brand_name
+from app_config import get_brand_name, get_secret_key
 
 
 app = Flask(__name__)
@@ -19,7 +19,7 @@ app_config = config(environment)
 app.register_blueprint(api_bp)
 app.config["SQLALCHEMY_DATABASE_URI"] = app_config.SQLALCHEMY_DATABASE_URI 
 app.config["SESSION_TYPE"] = "filesystem"
-app.config['SECRET_KEY'] = 'JustSomeJunkForNow'
+app.config['SECRET_KEY'] = get_secret_key()
 db.init_app(app)
 # db = SQLAlchemy(app)
 sess = Session(app)
