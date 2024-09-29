@@ -15,17 +15,24 @@ user_auth_model = api.model("User",{
     "active" : fields.Boolean
 })
 
-user_signup_model = api.model("User",{
-    "username": fields.String,
-    "password": fields.String,
-    "email" : fields.String,
-})
-
-user_post_model = api.model("UserPost",{
-    "username" :fields.String,
-})
 
 user_login_model = api.model("UserLoginGet",{
     "username" :fields.String,
     "password" :fields.String,
+})
+
+#######################
+## Rebuild
+#######################
+
+get_users_model = api.model("User",{
+    "users_id": fields.Integer,
+    "username": fields.String, 
+    "email": fields.String,
+})
+
+user_signup_model = api.model("Users",{
+    "username": fields.String,
+    "password": fields.String,
+    "email" : fields.String,
 })

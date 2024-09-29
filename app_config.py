@@ -3,11 +3,11 @@ brand_name = "Update app_config.py"
 secret_key = 'JustSomeJunkForNow'
 
 ## Dev DB Connection Info
-DEV_PG_USER = "productivitypals"
-DEV_PG_PASS = "Pr0duc71v17yp4l$"
-DEV_PG_URL = "hirehumble.com"
+DEV_PG_USER = "someuser"
+DEV_PG_PASS = "SomePassword"
+DEV_PG_URL = "localhost"
 DEV_PG_PORT = "5432"
-DEV_PG_DB = "productivitypals"
+DEV_PG_DB = "to-do"
 
 def get_brand_name():
     return brand_name

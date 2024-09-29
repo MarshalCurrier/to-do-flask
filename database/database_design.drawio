@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" modified="2024-09-27T00:14:03.004Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" etag="AKPFeNFSMSDzG2nBDl3u" version="24.5.3" type="device">
+  <diagram name="Page-1" id="9f46799a-70d6-7492-0946-bef42562c5a5">
+    <mxGraphModel dx="894" dy="737" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="78961159f06e98e8-17" value="Users" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=12" parent="1" vertex="1">
+          <mxGeometry x="100" y="83" width="160" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="78961159f06e98e8-21" value="username&lt;div&gt;email&lt;/div&gt;&lt;div&gt;email verified&lt;/div&gt;&lt;div&gt;pass&lt;/div&gt;&lt;div&gt;status (FK Account Status)&lt;/div&gt;&lt;div&gt;creation date&lt;/div&gt;&lt;div&gt;Role (FK Roles)&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="78961159f06e98e8-17" vertex="1">
+          <mxGeometry y="26" width="160" height="114" as="geometry" />
+        </mxCell>
+        <mxCell id="LJxSlF8JPEshFTNqp30F-1" value="Profile" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="270" y="83" width="160" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="LJxSlF8JPEshFTNqp30F-2" value="username (FK Users)&lt;div&gt;Bio&lt;/div&gt;&lt;div&gt;Goals&lt;/div&gt;&lt;div&gt;Phone&lt;/div&gt;&lt;div&gt;Phone Verified&lt;/div&gt;&lt;div&gt;Availability&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="LJxSlF8JPEshFTNqp30F-1">
+          <mxGeometry y="26" width="160" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="LJxSlF8JPEshFTNqp30F-5" value="Task Status" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="440" y="240" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="LJxSlF8JPEshFTNqp30F-6" value="Completed&lt;div&gt;Not Started&lt;/div&gt;&lt;div&gt;In progress&lt;/div&gt;&lt;div&gt;Abandoned&lt;/div&gt;&lt;div&gt;Deferred&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="LJxSlF8JPEshFTNqp30F-5">
+          <mxGeometry y="26" width="200" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="LJxSlF8JPEshFTNqp30F-7" value="To-Dos" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="440" y="83" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="LJxSlF8JPEshFTNqp30F-8" value="Assigned to username (FK Users)&lt;div&gt;Assigned by username (FK Users)&lt;/div&gt;&lt;div&gt;Status (FK Status)&lt;/div&gt;&lt;div&gt;Date Assigned&lt;/div&gt;&lt;div&gt;Date Completed&lt;/div&gt;&lt;div&gt;Done By&lt;/div&gt;&lt;div&gt;Title of Task&lt;/div&gt;&lt;div&gt;Details of Task&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="LJxSlF8JPEshFTNqp30F-7">
+          <mxGeometry y="26" width="200" height="124" as="geometry" />
+        </mxCell>
+        <mxCell id="LJxSlF8JPEshFTNqp30F-9" value="Roles" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="100" y="240" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="LJxSlF8JPEshFTNqp30F-10" value="Users&lt;div&gt;Admin&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="LJxSlF8JPEshFTNqp30F-9">
+          <mxGeometry y="26" width="160" height="44" as="geometry" />
+        </mxCell>
+        <mxCell id="LJxSlF8JPEshFTNqp30F-11" value="Account Staus" style="swimlane;html=1;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;swimlaneFillColor=#ffffff;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1;fillColor=none;fontFamily=Verdana;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="270" y="240" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="LJxSlF8JPEshFTNqp30F-12" value="Pending&lt;div&gt;Approved&lt;/div&gt;&lt;div&gt;Revoked&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;whiteSpace=wrap;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="LJxSlF8JPEshFTNqp30F-11">
+          <mxGeometry y="26" width="160" height="54" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
