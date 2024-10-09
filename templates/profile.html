@@ -1,6 +1,63 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Hello World!</h1>
-    <h2>Welcome to FlaskApp!</h2>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      1 of 2
+    </div>
+    <div class="col">
+      2 of 2
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      1 of 3
+    </div>
+    <div class="col">
+      2 of 3
+    </div>
+    <div class="col">
+      3 of 3
+    </div>
+  </div>
+</div>
+
+
+<div class="row pt-2">
+    <div class="card col-3">
+      <div class="card-body">
+      <h5 class="card-title">Details</h5>
+      <table class="table">
+          <tbody>
+            <tr>
+              <td>Stuff</td>
+              <td>Stuff</td>
+            </tr>
+            <tr>
+              <td>Stuff</td>
+              <td>Stuff</td>
+            </tr>
+            <tr>
+              <td>Stuff</td>
+              <td>Stuff</td>
+            </tr>
+          </tbody>
+        </table>
+      <p class="card-text">{{ username }}</p>
+      <p class="card-text">{{ username }}</p>
+      </div>
+    </div>
+    <div class="card col-9">
+        <h5 class="card-title">Bio</h5>
+        <div class="card-body">
+            <p class="card-text"></p>
+        </div>
+        <h5 class="card-title">Goals</h5>
+        <div class="card-body">
+            <p class="card-text"></p>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

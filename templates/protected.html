@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Hello World!</h1>
+    <h2>Welcome to FlaskApp!</h2>
+    <ul>
+        <li>token: {{ token }}</li>
+        <li>valid_token: {{ valid_token }}</li>
+        <li>expires_in: {{ expires_in }}</li>
+    </ul>
+{% endblock %}

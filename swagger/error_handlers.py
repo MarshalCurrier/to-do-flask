@@ -1,4 +1,5 @@
 from flask_restx import Namespace
+import json
 from sqlalchemy.exc import IntegrityError, DataError, NoResultFound
 
 ns_error_handling = Namespace("")
@@ -20,7 +21,10 @@ def integrity_error(error):
     message = error.args[0]
     if "(psycopg2.errors.UniqueViolation)" in message:
         details = message.split("DETAIL: ")[1][:-2]
-        message = f"Duplicate value violates unique constraint:{details}"
+        details = details.split('=', 1)[1]
+        details = details.replace('(', '')
+        details = details.replace(')', '')
+        message = f"{details}"
     elif "(psycopg2.errors.NotNullViolation)" in message:
         details = message.split("\nDETAIL: ")[0][35:]
         message = f"Value unprovided or cannot be null: {details}"

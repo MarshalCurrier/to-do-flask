@@ -1,4 +1,4 @@
-from .extensions import api
+from ..extensions import api
 from flask_restx import fields
 
 user_model = api.model("User",{
@@ -25,7 +25,7 @@ user_login_model = api.model("UserLoginGet",{
 ## Rebuild
 #######################
 
-get_users_model = api.model("User",{
+get_users_model = api.model("Users",{
     "users_id": fields.Integer,
     "username": fields.String, 
     "email": fields.String,
